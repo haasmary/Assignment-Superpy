@@ -1,0 +1,8 @@
+
+
+## Notable technical elements of my implementation
+
+1. I wrote the inventory function in a way it can be re-used easily in other parts of my code. If I want to later adjust it, it only needs to be adjusted in one place, which makes my code easier to maintain. This was done using the `def report_inventory_aux(self, option):` function, which I reused in `def report_inventory(self, option):`, `def report_inventory_pdf(self, option):` and `def to_get_expired(self, number_of_days):`
+2. I choose to add the possibility to create a PDF file for the inventory. This PDF file contains a supermarket logo (image) and reports the inventory date. Additionally, it reports the inventory in a table format. The other non-trivial feature I added is a function to create a list of items fromt he inventory which are about to expire within the current date and a given number of days. This function is called `def to_get_expired(self, number_of_days):`.
+3. The example in the assignment description noted to make it possible to report the profit and revenue over a certain period of time. I decided to implement this in a slightly different way than was depicted in the assignment example. I wrote the function so it is more flexible and generic, making it possible to create a calculation of the profit and/or revenue over any period of time that is needed. The user should set the program to the desired end date by using the `setdate` or the `adjustdate` command. After the `revenue_from` or `profit_from` command, the desired starting date can be used as an input. This implementation makes it possible to not only get information over certain months, but also other specific shorter or longer time intervals.
+
